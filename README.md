@@ -21,7 +21,7 @@ I figured it might also be worth seeing what my style is when working, so I made
 
 In subsequent commits, I made the original script into a more reusable class, created some unit tests, moved input files into a structure more useable by the tests, and added golden files for testing the output of the match_loads function.  I tried to make the unit test for the match\_loads function very easy to add test data to.  I view this to be important because when an edge case is detected and fixed, the original input that caused problems can simply be added to the test\_input directory, the expected output can be added to the test\_output directory, and correctness is tested from that point onwards with no code changes to the unit test itself.  I did not venture into adding negative tests, but that would be a good improvement to make in the future.
 
-Design decisions:
+##Design decisions
 My immediate thought when I saw this problem was that this was a classic single-source shortest-path problem.  If a load required multiple trucks to get to its destination creating a graph with origins and destinations as nodes and the distances provided as edges would be the way I would proceed.  Upon clarification I was told I could assume a single truck, so using dictionaries as simple lookups seemed to be the simplest solution.  Performance of dictionaries in Python is good, and most of the processing time of the script is going to be spent in parsing the input files.
 
 I started by asking what kind of interface I would want given the inputs to get the desired results.  I came up with:
