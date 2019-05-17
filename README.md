@@ -35,7 +35,7 @@ I considered a single dictionary with a tuple of (truck, distance) as a value, b
 
 From there, knowing what kind of interface I wanted, I worked backwards to come up with the necessary data structures (which are obvious from the interface).  I parsed data into the data structures from the input format.  I chose CSV because the problem statment lists the data in a format that resembles a spreadsheet, and I thought given the problem space a CSV was not unlikely as an input format.  I used defaultdict to simplify the usage of a dictionary even further, and chose to use Python's csv module with a DictReader so that the lookups in the input would be human readable.
 
-I chose to output both to the console and to a file.  I did this because I wanted to persist output, and I didn't view this as much as a library as I did a standalone utility.  Were it a library I would have returned values from the match\_loads function rather than persisting output to disk and returning to the console.
+I chose to output both to the console and to a file.  I did this because I wanted to persist output, and I didn't view this as much as a library who's output would be further process as I did a standalone utility that produced final output.  Were it a library that generated data to be further processed I would have returned values from the match\_loads function rather than persisting output to disk and returning to the console.
 
 ## Final notes
 
