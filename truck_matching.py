@@ -2,6 +2,8 @@ import csv
 import sys
 from collections import defaultdict
 
+# The structure of this class assumes truck routes and distances will be static for the lifetime of the class, while loads might vary.
+# This class also assumes input is properly formatted.
 class TruckMatcher:
 	# Parse the CSV file for trucks provided on the command line into truck_dict
 	def parse_trucks(self, truck_file):
@@ -57,5 +59,6 @@ if __name__ == "__main__":
 	distance_file = sys.argv[2]
 	load_file = sys.argv[3]
 
+	# Create a matcher and try one load file
 	truck_matcher = TruckMatcher(truck_file, distance_file)
 	truck_matcher.match_loads(load_file)
